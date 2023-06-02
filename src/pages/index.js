@@ -15,8 +15,6 @@ import Tooltip from "../utils/Tooltip";
 
 document.addEventListener("DOMContentLoaded", () => {
   const options = {
-    apiKey: "AIzaSyAozRsHSFgLEZkH-Du-a2r4K1CsXPLjj2o",
-    sheetId: "1pMHUao9ZhNXyDcHTHT7qbL1_Qz2J4dacETiRbtRE7bA",
     index: 0,
     // sheetName: 'Лист1',
     //sheetName: "Расписание_2022_осень",
