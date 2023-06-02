@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Календарь</title>
+  </head>
+
+  <body>
+    <div class="calendar-widget">
+      <div class="calendar-tooltip calendar-hidden">
+        <p class="calendar-tooltip__text"></p>
+      </div>
+      <div class="calendar-page">
+        <div class="calendar-header">
+          <span class="calendar-header__year-row">2022</span>
+          <div class="calendar-header__month-row">
+            <button
+              class="calendar-button calendar-header__today-btn"
+              type="button"
+            >
+              Сегодня
+            </button>
+            <div class="calendar-header__month-container">
+              <button
+                class="calendar-button calendar-header__change-month-btn calendar-header__change-month-btn_type_previous"
+              ></button>
+              <div class="calendar-header__month-wrap">
+                <span class="calendar-header__month">Апрель</span>
+                <span class="calendar-header__year-for-mobile">2022</span>
+              </div>
+              <button
+                class="calendar-button calendar-header__change-month-btn calendar-header__change-month-btn_type_next"
+              ></button>
+            </div>
+            <button
+              class="calendar-button calendar-header__today-btn calendar-header__period-btn"
+              type="calendar-button"
+            >
+              Неделя
+            </button>
+          </div>
+          <span class="calendar-header__selected-period-row"
+            >11.04&ndash;17.04</span
+          >
+        </div>
+        <div class="calendar-grid">
+          <ul class="calendar-grid__header">
+            <li class="calendar-day calendar-day_type_title">ПН</li>
+            <li class="calendar-day calendar-day_type_title">ВТ</li>
+            <li class="calendar-day calendar-day_type_title">СР</li>
+            <li class="calendar-day calendar-day_type_title">ЧТ</li>
+            <li class="calendar-day calendar-day_type_title">ПТ</li>
+            <li class="calendar-day calendar-day_type_title">СБ</li>
+            <li class="calendar-day calendar-day_type_title">ВС</li>
+          </ul>
+          <ul class="calendar-grid__days-list"></ul>
+        </div>
+        <template class="calendar-day-template">
+          <li class="calendar-day">
+            <div class="calendar-day__events-wrap"></div>
+          </li>
+        </template>
+      </div>
+      <section class="calendar-events"></section>
+      <section class="calendar-event-popup">
+        <ul class="calendar-event-popup__actions">
+          <li class="calendar-icon calendar-icon_type_share calendar-button"></li>
+          <li class="calendar-icon calendar-icon_type_close calendar-button"></li>
+        </ul>
+        <h2 class="calendar-event-popup__title">Сортировка</h2>
+        <p
+          class="calendar-event-popup__text calendar-event-popup__text_date"
+        ></p>
+        <p
+          class="calendar-event-popup__text calendar-event-popup__text_hours"
+        ></p>
+        <ul class="calendar-event-popup__activities">
+          <li class="calendar-event-popup__activity">
+            <div class="calendar-icon calendar-icon_type_medkit"></div>
+            Медико-социальная помощь
+          </li>
+          <li class="calendar-event-popup__activity">
+            <div class="calendar-icon calendar-icon_type_food"></div>
+            Еда
+          </li>
+          <li class="calendar-event-popup__activity">
+            <div class="calendar-icon calendar-icon_type_health"></div>
+            Средства гигиены
+          </li>
+        </ul>
+        <p class="calendar-event-popup__text calendar-event-popup__text_metro">
+          м. Обуховская
+        </p>
+        <p
+          class="calendar-event-popup__text calendar-event-popup__text_address"
+        >
+          Агатов переулок 37, корп 4, Санкт-Петербург
+        </p>
+        <div class="calendar-event-popup__buttons">
+          <button
+            class="calendar-event-popup__button calendar-event-popup__button_red calendar-button"
+          >
+            Как добраться?
+          </button>
+          <a class="calendar-event-popup__button calendar-event-popup__button_call calendar-button" href="tel: 89522300349">Позвонить</a>
+        </div>
+      </section>
+      <section class="calendar-map-popup">
+        <div class="calendar-map-popup__container">
+          <button
+            type="button"
+            class="calendar-button calendar-map-popup__close-button"
+          ></button>
+          <div id="map" class="calendar-map"></div>
+        </div>
+      </section>
+
+      <template class="events-template">
+        <section class="calendar-events calendar-events_large">
+          <h2 class="calendar-events__title"></h2>
+          <div class="calendar-events__container"></div>
+        </section>
+      </template>
+
+      <template class="event-template">
+        <div class="calendar-event">
+          <h3 class="calendar-event__title"></h3>
+          <ul class="calendar-event__icons"></ul>
+          <ul class="calendar-event__details">
+            <li class="calendar-event__metro"></li>
+            <li class="calendar-event__hours"></li>
+            <li class="calendar-event__address"></li>
+          </ul>
+        </div>
+      </template>
+      <script
+        src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=08f019ca-e5f7-492b-b1e1-291179ed5f7e"
+        type="text/javascript"
+      ></script>
+    </div>
+  </body>
+</html>
